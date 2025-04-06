@@ -17,7 +17,7 @@ begin
 end;
 
 [Files]
-Source: "C:\Users\ZHAOL\Desktop\workplace\VideoMaker\bin\Release\net8.0-windows10.0.19041.0\win10-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\ZHAOL\Desktop\workplace\VideoMaker\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 [Tasks]
 Name: "desktopicon"; Description: "创建桌面快捷方式"; GroupDescription: "快捷方式:";Flags: checkedonce
 [Icons]
