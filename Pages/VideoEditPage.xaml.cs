@@ -19,11 +19,11 @@ namespace VideoMaker.Pages
             //_ffmpegService = ffmpegService;
 
             // 设置速度滑块的值变化事件
-            SliderSpeed.ValueChanged += (s, e) =>
-            {
-                double value = Math.Round(e.NewValue, 1);
-                LblSpeedFactor.Text = $"速度: {value}x";
-            };
+            //SliderSpeed.ValueChanged += (s, e) =>
+            //{
+            //    double value = Math.Round(e.NewValue, 1);
+            //    LblSpeedFactor.Text = $"速度: {value}x";
+            //};
         }
 
         private async void OnSelectVideoClicked(object sender, EventArgs e)

@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>VideoMaker</ApplicationTitle>
+		<ApplicationTitle>果剪</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.videomaker</ApplicationId>
