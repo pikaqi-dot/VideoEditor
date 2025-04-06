@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using VideoMaker.Services;
 
 namespace VideoMaker
 {
@@ -19,6 +20,7 @@ namespace VideoMaker
     		builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddSingleton<FFmpegService>();
             return builder.Build();
         }
     }

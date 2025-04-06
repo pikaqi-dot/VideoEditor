@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VideoMaker.Pages.VideoEditPage"
+             Title="视频编辑">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+            <Label Text="视频编辑工具" FontSize="24" HorizontalOptions="Center" Margin="0,0,0,20"/>
+            
+            <Frame BorderColor="Gray" Padding="10" Margin="0,0,0,10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="选择视频文件" FontSize="18"/>
+                    <Button x:Name="BtnSelectVideo" Text="浏览..." Clicked="OnSelectVideoClicked"/>
+                    <Label x:Name="LblSelectedVideo" Text="未选择文件"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <Frame BorderColor="Gray" Padding="10" Margin="0,0,0,10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="视频剪切" FontSize="18"/>
+                    <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
+                        <Label Text="开始时间:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                        <Entry x:Name="EntryStartTime" Placeholder="00:00:00" Grid.Row="0" Grid.Column="1"/>
+                        <Label Text="秒" Grid.Row="0" Grid.Column="2" VerticalOptions="Center"/>
+                        
+                        <Label Text="持续时间:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                        <Entry x:Name="EntryDuration" Placeholder="00:00:10" Grid.Row="1" Grid.Column="1"/>
+                        <Label Text="秒" Grid.Row="1" Grid.Column="2" VerticalOptions="Center"/>
+                    </Grid>
+                    <Button x:Name="BtnTrimVideo" Text="剪切视频" Clicked="OnTrimVideoClicked"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <Frame BorderColor="Gray" Padding="10" Margin="0,0,0,10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="视频合并" FontSize="18"/>
+                    <Button x:Name="BtnSelectVideosForMerge" Text="选择多个视频文件" Clicked="OnSelectVideosForMergeClicked"/>
+                    <Label x:Name="LblSelectedVideosForMerge" Text="未选择文件"/>
+                    <Button x:Name="BtnMergeVideos" Text="合并视频" Clicked="OnMergeVideosClicked"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <Frame BorderColor="Gray" Padding="10" Margin="0,0,0,10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="添加水印" FontSize="18"/>
+                    <Button x:Name="BtnSelectWatermark" Text="选择水印图片" Clicked="OnSelectWatermarkClicked"/>
+                    <Label x:Name="LblSelectedWatermark" Text="未选择水印"/>
+                    <Button x:Name="BtnAddWatermark" Text="添加水印" Clicked="OnAddWatermarkClicked"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <Frame BorderColor="Gray" Padding="10" Margin="0,0,0,10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="调整视频速度" FontSize="18"/>
+                    <Slider x:Name="SliderSpeed" Minimum="0.5" Maximum="2.0" Value="1.0" 
+                            MinimumTrackColor="Blue" MaximumTrackColor="Gray"/>
+                    <Label x:Name="LblSpeedFactor" Text="速度: 1.0x"/>
+                    <Button x:Name="BtnChangeSpeed" Text="调整速度" Clicked="OnChangeSpeedClicked"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <ActivityIndicator x:Name="LoadingIndicator" IsRunning="False" IsVisible="False" />
+            <Label x:Name="LblStatus" Text="" HorizontalOptions="Center" Margin="0,10,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

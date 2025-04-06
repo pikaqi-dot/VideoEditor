@@ -4,12 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:VideoMaker"
-    Shell.FlyoutBehavior="Locked"
-    Title="VideoEditor">
+    xmlns:pages="clr-namespace:VideoMaker.Pages"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="首页"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+            
+        <ShellContent
+            Title="视频编辑"
+            ContentTemplate="{DataTemplate pages:VideoEditPage}"
+            Route="VideoEditPage" />
+    </TabBar>
 
 </Shell>
