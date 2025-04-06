@@ -1,0 +1,27 @@
+[Setup]
+AppName=MyApp
+AppVersion=1.0
+DefaultDirName={code:GetProgramFilesPath}
+DefaultGroupName=MyApp
+OutputDir=.
+OutputBaseFilename=MyAppInstaller
+Compression=lzma2
+SolidCompression=yes
+[Code]
+function GetProgramFilesPath(Param: String): String;
+begin
+  if IsWin64 then
+    Result := 'C:\Program Files\MyApp'
+  else
+    Result := 'C:\Program Files (x86)\MyApp';
+end;
+
+[Files]
+Source: "C:\Users\ZHAOL\Desktop\workplace\VideoMaker\bin\Release\net8.0-windows10.0.19041.0\win10-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+[Tasks]
+Name: "desktopicon"; Description: "创建桌面快捷方式"; GroupDescription: "快捷方式:";Flags: checkedonce
+[Icons]
+Name: "{userdesktop}\VideoMaker"; Filename: "{app}\VideoMaker.exe";Tasks: desktopicon
+
+[Run]
+Filename: "{app}\VideoMaker.exe"; Description: "Launch MyApp"; Flags: nowait postinstall skipifsilent

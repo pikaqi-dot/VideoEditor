@@ -60,3 +60,5 @@ coverage/
 .vs/
 bin/
 obj/
+*.exe
+publish/
